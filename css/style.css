@@ -141,6 +141,7 @@ html.FonteUp {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: #e54;
+  cursor: pointer;
 }
 
 .faq-lista dt::before {
@@ -212,10 +213,6 @@ html.FonteUp {
   .dados,
   .mapa {
     grid-column: 1 / 3;
-  }
-
-  .faq-lista dt {
-    cursor: pointer;
   }
 
   .grid-section h1 {
