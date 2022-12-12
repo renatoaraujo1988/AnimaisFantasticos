@@ -48,3 +48,50 @@ function Faq () {
   }
 }
 Faq();
+
+//Scroll suave
+
+function scrollSuave(){
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+function scrollToSection(event) {
+  event.preventDefault();
+  const href = this.getAttribute('href');
+  const section = document.querySelector(href);
+  section.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
+// Forma alternativa
+  // const topo = section.offsetTop;
+  // window.scrollTo({
+  //   top: topo,
+  //   behavior: "smooth",
+  // });
+}
+linksInternos.forEach(item => {
+  item.addEventListener('click', scrollToSection);
+})
+}
+scrollSuave();
+
+// Animacao em scroll
+function animacaoScroll() {
+  const sections = document.querySelectorAll('.js-scroll');
+const metade = window.innerHeight * 0.6;
+function animaScroll() {
+sections.forEach(section => {
+  const sectionTop = section.getBoundingClientRect().top;
+  const visible = sectionTop - metade < 0;
+  if (visible) 
+    section.classList.add('ativo');
+  else
+  section.classList.remove('ativo');
+})
+}
+animaScroll();
+window.addEventListener('scroll', animaScroll);
+}
+animacaoScroll();
+
+
+
