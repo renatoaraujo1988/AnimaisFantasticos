@@ -14,11 +14,10 @@ export default function initModal() {
         toggleModal(event);
       }
     }
-    
+  
     botaoAbrir.addEventListener('click', toggleModal);
     botaoFechar.addEventListener('click', toggleModal);
     containerModal.addEventListener('click', cliqueForaModal);
   }
 }
-
 
